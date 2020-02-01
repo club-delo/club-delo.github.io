@@ -1,0 +1,407 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html
+	font-size: 16px
+
+body
+	counter-reset: advantages
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+h1, h2, h3, h4
+	margin: 0
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.header
+	background-size: cover
+
+.header__info
+	text-align: center
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	height: 100%
+	&-top
+		color: #0e1333
+		text-transform: uppercase
+		padding-top: 18%
+		font-family: museosans-delo, sans-serif
+		h3
+			font-size: 2.375rem
+			line-height: 1
+			margin-bottom: 0
+			font-weight: normal
+		h1
+			font-size: 12.5rem
+			line-height: 1
+			font-weight: normal
+	&-bottom
+		color: #4c6892
+		font-size: 2.25rem
+		text-transform: uppercase
+		font-family: bebasneue-delo, sans-serif
+		p
+			margin: 0
+
+.composition
+	&__header
+		p
+			margin: 0
+	&__content
+		p
+			margin: 0
+
+.section-first
+	background-repeat: no-repeat
+	background-color: #1c1c1c
+	color: #CCC8BD
+	font-family: bebasneue-delo, sans-serif
+	.composition
+		padding: 135px 0 30px
+		&__header
+			margin-bottom: 10px
+			.title
+				font-size: 3.375rem
+				line-height: 63px
+			.title-thin
+				font-weight: 300
+		&__content
+			font-size: 1.75rem
+			font-family: roboto-delo, sans-serif
+			line-height: 36px
+			p
+				margin: 30px 0
+			.link
+				color: #414141
+				font-family: bebasneue-delo, sans-serif
+				font-weight: bold
+				letter-spacing: 1px
+
+.cta
+	color: #3594F0
+	font-size: 2.25rem
+	display: inline-block
+	&:hover
+		text-decoration: none
+
+.title-wrapper
+	text-align: center
+	color: #1D1D1F
+	margin-bottom: 100px
+	h2
+		font-size: 4rem
+		line-height: 1.2
+		margin-bottom: 20px
+	p
+		font-size: 2.25rem
+		line-height: 1.3
+		width: 50%
+		margin: 0 auto
+
+.section-cta
+	padding: 55px 0 105px
+	background-color: #ffffff
+	.composition
+		color: #86868B
+		padding-left: 40px
+		&__header, &__content
+			line-height: 41px
+			font-size: 1.75rem
+		&__header
+			margin-bottom: 50px
+		&__content
+			.cta
+				margin-top: 70px
+	&__img
+		border-radius: 20px
+	&__inverse
+		background-color: #000000
+		.title-wrapper
+			color: #ffffff
+		.composition
+			color: #898989
+	
+.section-advantages
+	background-color: #282828
+	padding: 95px 0
+	&__inner
+		padding: 0 200px
+	.item
+		color: #ccc8bd
+		margin-bottom: 80px
+		&:last-child
+			margin-bottom: 0
+		p
+			font-size: 1.5rem
+			line-height: 30px
+			margin-bottom: 0
+		&__header
+			margin-bottom: 40px
+			padding-left: 140px
+			position: relative
+			&::before
+				counter-increment: advantages
+				content: counter(advantages)
+				font-size: 96px
+				line-height: 1
+				font-family: bebasneue-delo, sans-serif
+				font-weight: bold
+				position: absolute
+				left: 8%
+				top: 50%
+				transform: translateY(-50%)
+				z-index: 2
+			&::after
+				position: absolute
+				content: '#'
+				font-family: museosans-delo, sans-serif
+				font-size: 144px
+				line-height: 1
+				color: #293452
+				font-weight: bold
+				left: 0
+				top: -25px
+				z-index: 1
+			.title
+				color: #f1f1f1
+				font-size: 3rem
+				line-height: 1.2
+				text-transform: uppercase
+				font-family: bebasneue-delo, sans-serif
+				font-weight: normal
+				letter-spacing: 1px
+			.title-thin
+				font-weight: 300
+
+.section-speech
+	background-size: cover
+	background-position: center
+	.composition
+		padding: 130px 70px 100px 70px
+		position: relative
+		z-index: 2
+		background-color: #ffffff
+		border-radius: 28px
+		&__header
+			margin-bottom: 55px
+			.title
+				font-size: 4.5rem
+				line-height: 1.1
+				color: #0e1333
+				font-family: bebasneue-delo, sans-serif
+				text-transform: uppercase
+				font-weight: normal
+				letter-spacing: 1px
+			.title-thin
+				font-weight: 300
+		&__content
+			color: #2a3341
+			font-size: 1.5rem
+	.bg
+		margin-top: -170px
+		position: relative
+		z-index: 1
+
+.section-rules
+	background-color: #dadce2
+	color: #424b5b
+	padding: 75px 0 100px
+	counter-reset: rules
+	.section-title
+		font-size: 4.5rem
+		font-family: bebasneue-delo, sans-serif
+		text-transform: uppercase
+		font-weight: normal
+		line-height: 1
+		letter-spacing: 1px
+		margin-bottom: 40px
+	.rule
+		background-color: #fff
+		font-size: 2.25rem
+		line-height: 1.2
+		font-weight: normal
+		margin-bottom: 50px
+		padding: 42px 220px 60px 180px
+		border-radius: 12px
+		position: relative
+		&::before
+			position: absolute
+			top: 45%
+			transform: translateY(-45%)
+			left: 50px
+			font-size: 6rem
+			line-height: 1
+			color: #dadce2
+			font-family: bebasneue-delo, sans-serif
+			font-weight: bold
+			counter-increment: rules
+			content: counter(rules, decimal-leading-zero)
+		&:last-child
+			margin-bottom: 0
+
+.cta-title__blue
+	color: #3A92D1
+.cta-title__darkblue
+	color: #3b5c95
+
+.section-meetups
+	.cta-title
+		text-transform: uppercase
+		margin-bottom: 15px
+	.composition__header
+		margin-bottom: 40px
+	
+.section-price
+	background-color: #182b4c
+	color: #ffffff
+	padding: 100px 0
+	.title-wrapper
+		.section-title
+			font-size: 5.25rem
+			text-transform: uppercase
+			font-family: bebasneue-delo, sans-serif
+			color: #ffffff
+			font-weight: normal
+			letter-spacing: 2px
+		.section-subtitle
+			color: #a90606
+			text-transform: uppercase
+			font-size: 1.5rem
+			font-weight: bold
+	.item
+		position: relative
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			z-index: 1
+			background-color: #1a2c5a
+			box-shadow: 0px 3px 14px 5px rgba(42,64,109,0.95)
+			top: 0
+			left: 50px
+			bottom: -10px
+			right: 50px
+			border-radius: 23px
+	.price-item__wrapper
+		padding: 17px 12px 19px
+		background-color: #ffffff
+		border-radius: 23px
+		position: relative
+		z-index: 2
+		height: 100%
+	.price-item
+		color: #26355c
+		border: 1px solid #CDD8E9
+		padding: 40px 40px 54px 40px
+		border-radius: 23px
+		position: relative
+		height: 100%
+		display: flex
+		flex-direction: column
+		.old-price
+			position: absolute
+			top: 40px
+			right: 40px
+			text-decoration: line-through
+			font-size: 2.25rem
+			line-height: 1
+			font-weight: normal
+			font-weight: 300
+		.type
+			color: #8491ad
+			font-size: 1.625rem
+			text-transform: uppercase
+		&__header
+			margin-bottom: 15px
+			h3
+				font-size: 3rem
+				font-family: bebasneue-delo, sans-serif
+				line-height: 1
+				letter-spacing: 2px
+		&__content
+			font-size: 1.5rem
+			color: #182b4c
+			line-height: 1.5
+			margin-bottom: 60px
+		.button
+			display: flex
+			margin-top: auto
+			justify-content: space-between
+			background-color: #f0f2f7
+			border: 1px solid #CDD8E9
+			padding: 15px 20px
+			text-decoration: none
+			.text
+				h4
+					color: #27365d
+					text-transform: uppercase
+					font-size: 1.75rem
+					line-height: 1
+					letter-spacing: 1px
+				span
+					color: #8b94ad
+					font-size: 1.125rem
+					letter-spacing: 1px
+			&-price
+				text-align: right
+
+.price-footer
+	text-align: center
+	font-family: bebasneue-delo, sans-serif
+	padding-top: 100px
+	&__content
+		h2
+			font-size: 3rem
+			font-weight: normal
+			margin-bottom: 30px
+			line-height: 1.2
+		span
+			font-size: 2rem
+			position: relative
+			letter-spacing: 1px
+			&::before
+				position: absolute
+				content: ''
+				display: block
+				background-color: #dec896
+				width: 70%
+				height: 2px
+				top: -21px
+				left: 50%
+				transform: translateX(-50%)
+
+
+@import "media" // Always at the end
